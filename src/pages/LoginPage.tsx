@@ -17,11 +17,11 @@ const LoginPage = ({
     const [usernameOrEmail, setUsernameOrEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const [isLoading, setisLoading] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false); // Renamed setisLoading to setIsLoading
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        setisLoading(true);
+        setIsLoading(true); // Renamed setisLoading to setIsLoading
         try {
             axios
                 .post(`${API_URL}/api/accounts/login`, {
@@ -38,7 +38,7 @@ const LoginPage = ({
                     navigate("/problemset");
                 })
                 .catch((e: AxiosError) => {
-                    setisLoading(false);
+                    setIsLoading(false); // Renamed setisLoading to setIsLoading
                     setMessage(
                         (
                             e.response?.data as {
